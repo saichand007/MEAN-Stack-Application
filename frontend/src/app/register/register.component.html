@@ -1,0 +1,11 @@
+<h2 *ngIf="registered">Registration successfull</h2>
+
+<form (ngSubmit)="register(f.value)" #f="ngForm" ngNativeValidate>
+  <h1>Register to signin</h1>
+  <br/>
+  <label>Name:</label><input type="text" name="name" [(ngModel)]="name" required/><br/>
+  <label>Username:</label><input type="text" name="username" [(ngModel)]="username" required/><br/>
+  <label>Password:</label><input type="password" name="password" [(ngModel)]="password" required/><br/>
+  <button type="submit">Submit</button>
+</form>
+<a routerLink="/login" routerLinkActive="active">Login</a>
