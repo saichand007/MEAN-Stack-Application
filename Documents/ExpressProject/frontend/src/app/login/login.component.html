@@ -1,0 +1,8 @@
+<h1>login</h1>
+<form (ngSubmit)="login(f.value)" #f="ngForm" ngNativeValidate>
+<input type="text" [(ngModel)]="username" name="username" placeholder="username" required/>
+<input type="text" [(ngModel)]="password" name="password" placeholder="password" required/>
+<button type="submit">submit</button>
+</form>
+<a routerLink="/register" routerLinkActive="active">Register</a>
+

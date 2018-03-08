@@ -1,0 +1,36 @@
+<div *ngIf="hotel" >
+    <style>
+        button {
+          background-color: #4CAF50; /* Green */
+      
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+   
+        }
+        </style>
+ <button type="submit" (click)="logout()"   style="float: left"  >Logout</button>
+ <br/><br/>
+<h1>{{hotel.name}}</h1>
+<h3>{{hotel.description}}</h3>
+<h2>Reviews</h2>
+<ul *ngFor="let reviewdata of hotel.reviews">
+  <li>{{reviewdata.name}}:{{reviewdata.review}}</li>
+</ul>
+<div align="center">
+<h3>Add a Review</h3>
+<form #f="ngForm" (ngSubmit)="reviews(f.value)">
+<label>Name:</label><input type="text" [(ngModel)]="name" name="name" required />
+<br/>
+<label>review:</label><input type="text"[(ngModel)]="review" name="review" required/>
+<br/>
+<label>Rating:</label><input type="number" [(ngModel)]="rating" name="rating" required/>
+<br/><br/>
+<button type="submit">Submit</button>
+</form>
+</div>
+</div>
